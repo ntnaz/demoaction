@@ -1,0 +1,17 @@
+name: Run Greeting Action
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run custom greeting action
+        uses: ./my-custom-action
+        with:
+          name: "GitHub User"
